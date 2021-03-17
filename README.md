@@ -2,7 +2,7 @@
 
 To build a serverless, progressive web application (PWA) with React using a test-driven development (TDD) technique. The application uses the Google Calendar API to fetch upcoming events.
 
-__ __ Feature 1: Select a city
+## Feature 1: Select a city
 
 User Story
 
@@ -27,7 +27,7 @@ Given the user was typing “Berlin” in the city textbox and the list of sugge
 When the user selects a city (e.g. “Berlin, Germany”) from the list
 Then their city should be changed to that city (i.e. “Berlin, Germany”) and the user should receive a list of upcoming events in that city.
 
-** ** Feature 2: Show/Hide an event’s details
+## Feature 2: Show/Hide an event’s details
 
 User Story
 
