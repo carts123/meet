@@ -27,7 +27,7 @@ Given the user was typing “Berlin” in the city textbox and the list of sugge
 When the user selects a city (e.g. “Berlin, Germany”) from the list
 Then their city should be changed to that city (i.e. “Berlin, Germany”) and the user should receive a list of upcoming events in that city.
 
-## Feature 2: Show/Hide an event’s details
+** ** Feature 2: Show/Hide an event’s details
 
 User Story
 
@@ -52,7 +52,7 @@ Given an event element is open
 When a user clicks on the collapse button
 Then the event element will collapse along with the event details
 
-## Feature 3: Specify number of events
+** ** Feature 3: Specify number of events
 
 User Story
 
@@ -72,7 +72,7 @@ Given the main page lists events
 When the user specifies the amount of events they want to see
 Then the number of events they specified will be returned to the page
 
-## Feature 4: Use the app when offline
+** ** Feature 4: Use the app when offline
 
 User Story
 
@@ -92,7 +92,7 @@ Given the user is not connected to the internet
 When the user attempts to change the settings (city, time range)
 Then the app will show an error that the user must reconnect to the internet if they would like to make changes to the settings
 
-## Feature 5: Data visualisation
+** ** Feature 5: Data visualisation
 
 User Story
 
