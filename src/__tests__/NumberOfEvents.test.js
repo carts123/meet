@@ -40,4 +40,5 @@ describe('<NumberOfEvents /> component', () => {
       NumberOfEventsWrapper.find('.event-number-input').at(0).props().type
     ).toEqual('number');
   });
+
 });
