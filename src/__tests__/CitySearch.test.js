@@ -27,7 +27,7 @@ describe('<CitySearch /> component', () => {
 
   test('change state when text input changes', () => {
     CitySearchWrapper.setState({
-      query: 'Munich'
+      query: 'London'
     });
     const eventObject = { target: { value: 'Berlin' } };
     CitySearchWrapper.find('.city').simulate('change', eventObject);
@@ -35,7 +35,6 @@ describe('<CitySearch /> component', () => {
   });
 
   test('render list of suggestions correctly', () => {
-    const locations = extractLocations(mockData);
     CitySearchWrapper.setState({ suggestions: locations });
     const suggestions = CitySearchWrapper.state('suggestions');
     expect(CitySearchWrapper.find('.suggestions li')).toHaveLength(suggestions.length + 1);
