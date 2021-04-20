@@ -1,4 +1,4 @@
-import { mockData } from './mock-data';
+import mockData from './mock-data';
 import axios from 'axios';
 import NProgress from 'nprogress';
 
@@ -33,14 +33,14 @@ export const getEvents = async () => {
     const url = 'https://ga9ok112sc.execute-api.eu-central-1.amazonaws.com/dev/api/get-events' + '/' + token;
     const result = await axios.get(url);
     if (result.data) {
-      var locations = extractLocations(result.data.events);
+      var locations = extractLocations(result.data.events.events);
       localStorage.setItem("lastEvents", JSON.stringify(result.data));
       localStorage.setItem("locations", JSON.stringify(locations));
     }
     NProgress.done();
     return {
-      events: result.data.events,
-      locations: extractLocations(result.data.events)
+      events: result.data.events.events,
+      locations
     };
   }
 };
