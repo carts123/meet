@@ -4,6 +4,7 @@ import './nprogress.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
+import EventGenre from './EventGenre';
 import { getEvents } from './api';
 import { OfflineAlert } from './Alert';
 import {
