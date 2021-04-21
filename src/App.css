@@ -36,6 +36,11 @@ input[type="number"] {
   height: 38px;
 }
 
+.number-of-events-label,
+.event-number {
+  margin-top: 10px;
+}
+
 .city {
   width: 250px;
 }
