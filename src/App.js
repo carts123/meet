@@ -5,6 +5,7 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents } from './api';
+import { OfflineAlert } from './Alert';
 import {
   ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from 'recharts';
@@ -15,10 +16,21 @@ class App extends Component {
     events: [],
     locations: [],
     numberOfEvents: 32,
-    currentLocation: 'all'
+    currentLocation: 'all',
+    alertText: '',
   };
 
   updateEvents = (location, eventCount) => {
+    if (!navigator.onLine) {
+      this.setState({
+        alertText: 'You are currently offline and viewing cached data from your last visit.',
+      });
+    } else {
+      this.setState({
+        alertText: '',
+      });
+    }
+
     const { currentLocation, numberOfEvents } = this.state;
     if (location) {
       getEvents().then((data) => {
@@ -76,6 +88,7 @@ class App extends Component {
         <h1>Meet App</h1>
         <CitySearch locations={locations} updateEvents={this.updateEvents} />
         <NumberOfEvents numberOfEvents={numberOfEvents} updateEvents={this.updateEvents} />
+        <OfflineAlert text={this.state.alertText} />
         <h4>Events in each city</h4>
 
         <ResponsiveContainer height={400} >
